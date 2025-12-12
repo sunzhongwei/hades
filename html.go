@@ -10,7 +10,20 @@ import (
 	blackfriday "github.com/russross/blackfriday/v2"
 )
 
-// Split 用于模板中分割字符串
+var TemplateFuncMap = template.FuncMap{
+	"sub":            Sub,
+	"add":            Add,
+	"until":          Until,
+	"split":          Split,
+	"formatPrice":    FormatPrice,
+	"SafeHTML":       SafeHTML,
+	"SafeJS":         SafeJS,
+	"FormatDate":     FormatDate,
+	"FormatDateEn":   FormatDateEn,
+	"GenDescription": GenDescription,
+}
+
+// Split splits a string by a separator
 func Split(s, sep string) []string {
 	return strings.Split(s, sep)
 }
@@ -34,7 +47,7 @@ func Until(n int) []int {
 	return out
 }
 
-// UnescapeHTML 转义
+// UnescapeHTML
 func UnescapeHTML(s string) template.HTML {
 	return template.HTML(s)
 }
