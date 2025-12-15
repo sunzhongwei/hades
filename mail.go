@@ -2,6 +2,8 @@ package hades
 
 import (
 	//gomail "gopkg.in/gomail.v2"  // 改用 https://github.com/Shopify/gomail
+	"regexp"
+
 	gomail "github.com/Shopify/gomail"
 )
 
@@ -59,4 +61,12 @@ func SendMail(to, cc, subject, body string, config SMTPConfig) error {
 		return err
 	}
 	return nil
+}
+
+// email address validation regex
+func IsValidEmail(email string) bool {
+	// simplified regex for demonstration purposes
+	const emailRegex = `^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$`
+	re := regexp.MustCompile(emailRegex)
+	return re.MatchString(email)
 }
