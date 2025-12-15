@@ -20,6 +20,7 @@ var TemplateFuncMap = template.FuncMap{
 	"SafeJS":         SafeJS,
 	"FormatDate":     FormatDate,
 	"FormatDateEn":   FormatDateEn,
+	"FormatDateCn":   FormatDateCn,
 	"GenDescription": GenDescription,
 }
 

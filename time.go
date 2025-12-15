@@ -41,3 +41,8 @@ func FormatDate(t time.Time) string {
 func FormatDateEn(t time.Time) string {
 	return t.Format("January 02, 2006")
 }
+
+// Format Datetime As Chinese Locale, E.g: 2006年01月02日
+func FormatDateCn(t time.Time) string {
+	return t.Format("2006年01月02日")
+}
