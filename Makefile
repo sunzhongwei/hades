@@ -13,6 +13,7 @@ tag:
 	sed -E -i.bak 's/(const Version = ")([^"]+)(")/\1'"$$new"'\3/' version.go; \
 	git add version.go; \
 	git commit -m "chore(release): $$new"; \
+	git push origin HEAD; \
 	git tag -a "$$new" -m "release $$new"; \
 	git push origin "$$new"; \
 	rm -f version.go.bak
