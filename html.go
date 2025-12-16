@@ -22,6 +22,7 @@ var TemplateFuncMap = template.FuncMap{
 	"FormatDateEn":   FormatDateEn,
 	"FormatDateCn":   FormatDateCn,
 	"GenDescription": GenDescription,
+	"CurrentYear":    CurrentYear,
 }
 
 // Split splits a string by a separator

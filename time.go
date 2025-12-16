@@ -46,3 +46,8 @@ func FormatDateEn(t time.Time) string {
 func FormatDateCn(t time.Time) string {
 	return t.Format("2006年01月02日")
 }
+
+// Get Current Year
+func CurrentYear() int {
+	return time.Now().Year()
+}
